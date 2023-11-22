@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Bali</title>
+    <link rel="stylesheet" href="css/pemesanan.css">
+</head>
+<body> 
+    <div class="image-banner">
+        <img src="asset/banner/banner.jpeg" alt="">
+    </div>
+
+    <div class="intro">
+        <h1>RUNDOWN TOUR BALI</h1>
+        <p>Bali adalah sebuah pulau di Indonesia yang terkenal karena keindahan alamnya, kebudayaan yang kaya, dan pariwisata yang berkembang pesat</p>
+    </div>
+    
+    <div class="table-rundown">
+        <table>
+            <thead>
+                <tr>
+                    <th>Waktu</th>
+                    <th>Kegiatan</th>
+                    <th>Tempat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>09:00 - 09:30</td>
+                    <td>Registrasi </td>
+                    <td>Bandara Gusti Ngurah Rai</td>
+                </tr>
+                <tr>
+                    <td>09:30 - 10:00</td>
+                    <td>Pickup Airport</td>
+                    <td>Bandara Gusti Ngurah Rai</td>
+                </tr>
+                <tr>
+                    <td>10:00 - 13.00</td>
+                    <td>Istirahat Dan Makan Siang</td>
+                    <td>Hotel Grann Hyat Bali </td>
+                </tr>
+                <tr>
+                    <td>13:30 - 15.00</td>
+                    <td>Wisata Cagar Alam</td>
+                    <td>Monkey Forest</td>
+                </tr>
+                <tr>
+                    <td>16.00 - 18.00</td>
+                    <td>Wisata Pantai</td>
+                    <td>Diamond Beach</td>
+                </tr>
+                <tr>
+                    <td>18.00 - 19.00</td>
+                    <td>Istirahat Dan Makan Malam </td>
+                    <td>Ayam Betutu Grand Hike</td>
+                </tr>
+                <tr>
+                    <td>20.00 - 22.00</td>
+                    <td>Pertunjukan Tari Kecak Bali</td>
+                    <td>Pura Uluwatu</td>
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+    <!-- Form Pemesanan-->
+
+    <div class="pemesanan">
+        <form>
+            <h1>Form Pemesanan</h1>
+            <label for="nik">NIK (Nomor Induk Kependudukan):</label>
+            <input type="text" id="nik" name="nik" placeholder="Masukkan NIK Anda" required>
+
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+
+            <label for="nama">Alamat:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan Alamat  Anda" required>
+
+            <label for="tanggal">Tanggal Pemesanan:</label>
+            <input type="date" id="tanggal" name="tanggal" required>
+
+            <label for="jumlahOrang">Jumlah Orang:</label>
+            <input type="number" id="quantityInput" value="1" min="1" oninput="hitungTotalbali()">
+
+            <p>Total Harga: Rp.<span id="totalHarga-bali">6.000.000</span></p>
+    
+            <button type="submit">Pesan Sekarang</button>
+        </form>
+    </div>
+</body>
+ <!-- JavaScript -->
+ <script src="js/script.js"></script>
+</html>

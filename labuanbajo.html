@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Labuan Bajo</title>
+    <link rel="stylesheet" href="css/pemesanan.css">
+</head>
+<body> 
+    <div class="image-banner">
+        <img src="asset/banner/labuanbajo.jpeg" alt="">
+    </div>
+
+    <div class="intro">
+        <h1>RUNDOWN TOUR Labuan Bajo</h1>
+        <p>Labuan Bajo, yang terletak di Pulau Flores, Indonesia, merupakan tujuan wisata yang populer dan menarik</p>
+    </div>
+    
+    <div class="table-rundown">
+        <table>
+            <thead>
+                <tr>
+                    <th>Waktu</th>
+                    <th>Kegiatan</th>
+                    <th>Tempat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>09:00 - 11.00</td>
+                    <td>Penjumputan Dan Registrasi Peserta </td>
+                    <td>Hotel Kawasan Labuan Bajo </td>
+                </tr>
+                <tr>
+                    <td>11.00 - 12.00</td>
+                    <td>Sarapan dan perjalanan menuju ke Pink Beach</td>
+                    <td>Kapal VIP 1</td>
+                </tr>
+                <tr>
+                    <td>12.00 - 13.00</td>
+                    <td>Bermain di pantai dan aktivitas foto</td>
+                    <td>Pantai Pink Beach</td>
+                </tr>
+                <tr>
+                    <td>13:30 - 14.00</td>
+                    <td>Perjalanan menuju Pulau Komodo</td>
+                    <td>Kapal VIP 1</td>
+                </tr>
+                <tr>
+                    <td>14.00 - 15.00</td>
+                    <td>Trekking di Pulau Komodo untuk melihat Komodo</td>
+                    <td>Pulau Komodo</td>
+                </tr>
+                <tr>
+                    <td>15.00 - 15.30</td>
+                    <td>Perjalanan menuju Pulau Siaba </td>
+                    <td>Kapal VIP 1</td>
+                </tr>
+                <tr>
+                    <td>16.30 - 17-30 </td>
+                    <td>Snorekeling Di Sekitaran Pulau Siaba</td>
+                    <td>Pulau Siaba</td>
+                </tr>
+                <tr>
+                    <td>17.30- 19.00</td>
+                    <td>Sunset Dari Atas Kapal</td>
+                    <td>Kapal VIP 1</td>
+                </tr>
+                <tr>
+                    <td>19.00 - 20.00</td>
+                    <td>Makan Malam Dan Perjalanan Menuju Hotel</td>
+                    <td>Kapal VIP 1</td>
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+    <!-- Form Pemesanan-->
+
+    <div class="pemesanan">
+        <form>
+            <h1>Form Pemesanan</h1>
+            <label for="nik">NIK (Nomor Induk Kependudukan):</label>
+            <input type="text" id="nik" name="nik" placeholder="Masukkan NIK Anda" required>
+
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+
+            <label for="nama">Alamat:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan Alamat  Anda" required>
+
+            <label for="tanggal">Tanggal Pemesanan:</label>
+            <input type="date" id="tanggal" name="tanggal" required>
+
+            <label for="jumlahOrang">Jumlah Orang:</label>
+            <input type="number" id="jumlahOrang" name="jumlahOrang" placeholder="Masukkan jumlah orang" inputmode="numeric" required>
+    
+
+            <label for="">Harga:</label>
+            <input type="number" id="quantityInput-labuanbajo" value="1" min="1" oninput="hitungTotallabuanbajo()">
+
+            <p>Total Harga: Rp.<span id="totalHarga-labuanbajo">8.500.000</span></p>
+    
+            <button type="submit">Pesan Sekarang</button>
+        </form>
+    </div>
+</body>
+<!-- JavaScript -->
+<script src="js/script.js"></script>
+</html>
