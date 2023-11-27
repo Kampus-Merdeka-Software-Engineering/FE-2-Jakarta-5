@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Bromo Tengger Semeru</title>
+    <link rel="stylesheet" href="css/pemesanan.css">
+</head>
+<body> 
+    <div class="image-banner">
+        <img src="asset/banner/bromo.jpeg" alt="">
+    </div>
+
+    <div class="intro">
+        <h1>RUNDOWN TOUR Bromo Tengger Semeru</h1>
+        <p>Bromo Tengger Semeru merupakan kawasan wisata yang sangat terkenal di Indonesia, terutama di Pulau Jawa</p>
+    </div>
+    
+    <div class="table-rundown">
+        <table>
+            <thead>
+                <tr>
+                    <th>Waktu</th>
+                    <th>Kegiatan</th>
+                    <th>Tempat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>23.30 - 00.00</td>
+                    <td>Penjemputan Peserta</td>
+                    <td>Kawasan Malang</td>
+                </tr>
+                <tr>
+                    <td>00.00 - 02.30</td>
+                    <td>Perjelanan Ke Basecamp Jeep</td>
+                    <td>Mobil Travel</td>
+                </tr>
+                <tr>
+                    <td>02.30 - 03.30</td>
+                    <td>Perjalanan Ke Sunrise Point Menggunakan Jeep</td>
+                    <td>Menuju Sunrise Point</td>
+                </tr>
+                <tr>
+                    <td>03.30 - 06.00</td>
+                    <td>Behangat dan Menikmati Sunrise</td>
+                    <td>Sunrise Point Bromo</td>
+                </tr>
+                <tr>
+                    <td>06.00 - 07.00</td>
+                    <td>Perjalanan Ke bukit teletubis dan savana bromo </td>
+                    <td>Mobil Jeep</td>
+                </tr>
+                <tr>
+                    <td>07.00 - 07.30</td>
+                    <td>Explore Bukit teletubis dan savana Bromo</td>
+                    <td>Bukit Teletubis Bromo </td>
+                </tr>
+                <tr>
+                    <td>07.30 - 08.00</td>
+                    <td>Perjalanan Ke pasir berbisik dan Batu singa Bromo </td>
+                    <td>Mobil Jeep</td>
+                </tr>
+                <tr>
+                    <td>08.00 - 08.15</td>
+                    <td>Explore pasir berbisik dan Batu singa Bromo </td>
+                    <td>Pasir Berbisik Bromo</td>
+                </tr>
+                <tr>
+                    <td>08.15 - 08-30</td>
+                    <td>Perjalanan Ke Kawah Bromo</td>
+                    <td>Mobil Jeep</td>
+                </tr>
+                <tr>
+                    <td>08.30 - 10.00</td>
+                    <td>Explore Kawah Bromo</td>
+                    <td>Kawah Bromo Tengger Semeru</td>
+                </tr>
+                <tr>
+                    <td>10.00 - 11.00</td>
+                    <td>Menuju Basecamp Jeep</td>
+                    <td>Mobil Jeep</td>
+                </tr>
+                <tr>
+                    <td>11.30</td>
+                    <td>Perjalanan Kembali ke malang</td>
+                    <td>Mobil Travel</td>
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+    <!-- Form Pemesanan-->
+
+    <div class="pemesanan">
+        <form>
+            <h1>Form Pemesanan</h1>
+            <label for="nik">NIK (Nomor Induk Kependudukan):</label>
+            <input type="text" id="nik" name="nik" placeholder="Masukkan NIK Anda" required>
+
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+
+            <label for="nama">Alamat:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan Alamat  Anda" required>
+
+            <label for="tanggal">Tanggal Pemesanan:</label>
+            <input type="date" id="tanggal" name="tanggal" required>
+
+            <label for="jumlahOrang">Jumlah Orang:</label>
+
+            <input type="number" id="quantityInput-bromo" value="1" min="1" oninput="hitungTotalbromo()">
+
+            <p>Total Harga: Rp.<span id="totalHarga-bromo">3.000.000</span></p>
+    
+            <button type="submit">Pesan Sekarang</button>
+        </form>
+    </div>
+</body>
+<!-- JavaScript -->
+<script src="js/script.js"></script>
+</html>
