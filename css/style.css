@@ -87,7 +87,7 @@ nav.sticky .logo a{
   text-align: center;
 }
 .content h1 {
-  margin-top: 150px;
+  margin-top: 20px;
   font-size: 50px;
   font-weight: 800;
 }
@@ -101,7 +101,7 @@ nav.sticky .logo a{
 }
 
 
-/*banner*/
+/*banner Content*/
 .intro {
   margin-top: 80px;
   text-align: center;
@@ -112,45 +112,82 @@ nav.sticky .logo a{
   font-weight: 800;
 }
 
-.searching button {
-  width: 110px;
-  padding: 8px;
-  margin: 20px 1px;
-  text-align: center;
-  border-radius: 5px;
-  border: 2px;
-  font-size: 15px;
-  cursor: pointer;
-  font-weight: 600;
-  background: orange;
-  color: white;
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.searching button:hover {
-  background-color: #e68718;
-  transition: 0.5s;
-}
-
-.searching button:hover {
-  color: white;
+.searching {
+  display: inline-block;
+  position: relative;
 }
 
 .search-input {
-  height: 40px;
   width: 300px;
-  border-radius: 2px;
+  padding: 10px;
+  font-size: 16px;
 }
 
-.search-input::placeholder {
-  color: #999;
-  text-align: center;
+.search-results {
+  position: absolute;
+  z-index: 1;
+  background-color: #ffffff; /* Latar belakang putih untuk hasil pencarian */
+  width: 100%; /* Lebar maksimum */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  overflow-y: auto;
+  top: 100%; /* Posisikan di bawah input */
+  left: 0;
+  display: none;
 }
 
-.search-button img {
-  height: 13px;
-  width: 13px;
-  margin-right: 5px;
+.card-search {
+  background-color: #ffffff; /* Latar belakang putih untuk hasil pencarian */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+ 
+  display: none;
 }
+
+.result-box {
+  align-items: center;
+}
+
+.result-image {
+  height: 100px;
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.result-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: #24262b;
+}
+
+.result-rating {
+  color: #f09d0f;
+}
+
+.result-price {
+  font-weight: bold;
+  color: #333;
+}
+
+.button-search{
+  width: 80px;
+  height: 50px;
+  background-color: #e68718;
+}
+
+.uknown-result{
+  font-size: 10px;
+  margin-bottom: 5px;
+  color: #24262b;
+}
+
+/* Pelayanan */
 
 .container {
   margin-top: 50px;

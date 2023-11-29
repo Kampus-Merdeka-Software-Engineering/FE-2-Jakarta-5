@@ -15,12 +15,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-   
   </head>
   <body>
     <!--Banner-->
     <div class="banner" id="banner">
-      <video  autoplay muted loop playsinline >
+      <video autoplay muted loop playsinline>
         <source src="asset/video.mp4" type="video/mp4" />
       </video>
 
@@ -64,13 +63,73 @@
             type="text"
             class="search-input"
             placeholder="Search Here............"
-          />
-          <button class="search-button">
-            <img src="asset/icon/search.png" />Search
+            oninput="showResults(this.value)"
+          /><button class="button-search" onclick="searchButtonClick()">
+            <i class="fa-solid fa-magnifying-glass fa-sm" style="color: #ffffff;"></i>
           </button>
+          <div id="search-results" class="search-results"></div>
+
+          <div id="baliResults" class="card-search">
+            <div class="result-box">
+              <img src="asset/card/bali3.jpeg" class="result-image" />
+              <h2 class="result-title">Bali Indonesia</h2>
+              <div class="result-rating">
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+              </div>
+              <div class="result-price">RP.6.000.000</div>
+              <a href="bali.html" target="_blank" class="button-destinasi"
+                >Book Now</a
+              >
+            </div>
+          </div>
+
+          <div id="labuanResults" class="card-search">
+            <div class="result-box">
+              <img src="asset/card/labuan-bajo.jpeg" class="result-image" />
+              <h2 class="result-title">Labuan Bajo</h2>
+              <div class="result-rating">
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+              </div>
+              <div class="result-price">RP.8.500.000</div>
+              <a href="labuanbajo.html" target="_blank" class="button-destinasi"
+                >Book Now</a
+              >
+            </div>
+          </div>
+
+          <div id="bromoResults" class="card-search">
+            <div class="result-box">
+              <img src="asset/card/bromo.png" class="result-image" />
+              <h2 class="result-title">Bromo Tengger Semeru</h2>
+              <div class="result-rating">
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+                <i class="fa-solid fa-star fa-lg"></i>
+              </div>
+              <div class="result-price">RP.3.000.000</div>
+              <a href="bromo.html" target="_blank" class="button-destinasi"
+                >Book Now</a
+              >
+            </div>
+          </div>
+
+          <div id="uknownResults" class="card-search">
+            <div class="result-box">
+              <h2 class="uknown-result">Maaf Paket Destinasi Belum Tersedia</h2>
+          </div>
         </div>
       </div>
     </div>
+
 
     <!--Pelayanan-->
     <div id="intro"></div>
@@ -107,8 +166,8 @@
         <img src="asset/icon/pantai.png" alt="Gambar 3" />
         <p>Destinasi Luar Biasa</p>
         <p>
-          Dengan jaringan  kami, kami menawarkan akses ke destinasi luar
-          biasa di seluruh Indonesia. Mulai dari pantai eksotis hingga perjalanan
+          Dengan jaringan kami, kami menawarkan akses ke destinasi luar biasa di
+          seluruh Indonesia. Mulai dari pantai eksotis hingga perjalanan
           petualangan ke pegunungan, kami memiliki sesuatu untuk setiap
           penjelajah.
         </p>
@@ -121,43 +180,47 @@
     </div>
 
     <div class="pricing-container">
+      <div class="card-destinasi">
+        <img src="asset/card/bali3.jpeg " />
+        <h2>Bali Indonesia</h2>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <div class="price" id="harganilai">RP.6.000.000</div>
+        <a href="bali.html" target="_blank" class="button-destinasi"
+          >Book Now</a
+        >
+      </div>
+      <div class="card-destinasi">
+        <img src="asset/card/labuan-bajo.jpeg" alt="Product 2" />
+        <h2>Labuan Bajo</h2>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <div class="price">RP.8.500.000</div>
+        <a href="labuanbajo.html" target="_blank" class="button-destinasi"
+          >Book Now</a
+        >
+      </div>
 
       <div class="card-destinasi">
-        <img src="asset/card/bali3.jpeg ">
-        <h2>Bali Indonesia</h2>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <div class="price" id="harganilai">RP.6.000.000</div>
-        <a href="bali.html" target="_blank" class="button-destinasi">Book Now</a>
-      </div>
-      <div class="card-destinasi">
-        <img src="asset/card/labuan-bajo.jpeg" alt="Product 2">
-        <h2>Labuan Bajo</h2>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <div class="price">RP.8.500.000</div>
-        <a href="labuanbajo.html" target="_blank" class="button-destinasi">Book Now</a>
-      </div>
-  
-      <div class="card-destinasi">
-        <img src="asset/card/bromo.png" alt="Product 3">
-        <h2>Bromo  Semeru</h2>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f;"></i>
-        <i class="fa-solid fa-star fa-lg" style="color: #9d9a9a;"></i>
+        <img src="asset/card/bromo.png" alt="Product 3" />
+        <h2>Bromo Semeru</h2>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #f09d0f"></i>
+        <i class="fa-solid fa-star fa-lg" style="color: #9d9a9a"></i>
         <div class="price">RP.3.000.000</div>
-        <a href="bromo.html" target="_blank" class="button-destinasi">Book Now</a>
+        <a href="bromo.html" target="_blank" class="button-destinasi"
+          >Book Now</a
+        >
       </div>
     </div>
-    
 
     <div id="berita"></div>
     <!--Berita-->
@@ -287,6 +350,6 @@
       </div>
     </footer>
   </body>
-   <!-- JavaScript -->
-   <script src="js/script.js"></script>
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
 </html>
