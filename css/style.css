@@ -503,6 +503,11 @@ ul{
     font-size: 30px;
   }
 
+  .button-search{
+    width: 100px;
+    height: 50px;
+  }
+
   .intro h1 {
     font-size: 25px;
   }
