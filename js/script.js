@@ -70,6 +70,7 @@ function hitungTotallabuanbajo() {
   //totalHarga.toLocaleString('id-ID'); digunakan untuk mengubah nilai totalHarga menjadi format string dengan pemisah ribuan dan menggunakan tanda desimal sesuai dengan konvensi bahasa Indonesia ('id-ID').
   document.getElementById('totalHarga-labuanbajo').innerText = totalHarga.toLocaleString('id-ID');
 }
+
 // Fungsi untuk menampilkan hasil pencarian berdasarkan kata  yang dimasukkan oleh pengguna
 function showResults(searchTerm) {
   // Mendapatkan elemen kontainer hasil pencarian
