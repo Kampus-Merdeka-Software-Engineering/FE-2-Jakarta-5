@@ -136,56 +136,84 @@ function showResults(searchTerm) {
   }
 }
 
-async function getNewsData(params) {
+async function fetchData() {
   try {
-    const response = await fetch("https://your-api-endpoint.com/news");
+    const response = await fetch("https://be-2-jakarta-5-production.up.railway.app/destinationPackage/get");
+    const data = await response.json();
     return data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    return [];
   }
 }
 
-async function renderNews() {
-  const newsData = await getNewsData();
+async function updateDestinasiPackages() {
+  const destinasiContainer = document.getElementById("destinasi-package");
 
+  const destinasiData = await fetchData();
+
+  const Link = [{ link_url: "bali.html" }, { link_url: "labuanbajo.html" }, { link_url: "bromo.html" }];
+  destinasiData.forEach((destinasi, index) => {
+    const card = document.createElement("div");
+    card.classList.add("card-destinasi");
+
+    card.innerHTML = `
+      <img src="${destinasi.image_url}" />
+      <h2>${destinasi.destination_name}</h2>
+      ${generateStarRating(destinasi.destination_package_review)}
+      <div class="price">RP.${destinasi.package_price}</div>
+      <a href="${Link[index].link_url}" target="_blank" class="button-destinasi">Book Now</a>
+    `;
+
+    destinasiContainer.appendChild(card);
+  });
+  console.log(destinasiData);
+}
+
+function generateStarRating(rating) {
+  const maxRating = 5;
+  let starsHTML = "";
+
+  for (let i = 1; i <= maxRating; i++) {
+    const starClass = i <= rating ? "fa-solid fa-star fa-lg" : "fa-solid fa-star fa-lg";
+    const starColor = i <= rating ? "color: #f09d0f" : "color: #9d9a9a";
+    starsHTML += `<i class="${starClass}" style="${starColor}"></i>`;
+  }
+
+  return starsHTML;
+}
+
+async function newsdata() {
+  try {
+    const response = await fetch("https://be-2-jakarta-5-production.up.railway.app/news/get");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+async function updateNews() {
   const newsContainer = document.getElementById("berita");
+  const newsData = await newsdata();
 
-  newsData.forEach((newsItem) => {
-    const cardSearch = document.createElement("div");
-    cardSearch.classList.add("card-search");
+  newsData.forEach((news) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
 
-    const resultBox = document.createElement("div");
-    resultBox.classList.add("result-box");
+    card.innerHTML = `
+      <img src="${news.img_url}" alt="${news.title}" />
+      <div class="card-content">
+        <h2 class="card-title">${news.title}</h2>
+        <p class="card-description">${news.body}</p>
+        <a href="${news.news_url}" target="_blank">Read More >>></a>
+      </div>
+    `;
 
-    const image = document.createElement("img");
-    image.src = newsItem.img_url;
-    image.alt = newsItem.title;
-    image.classList.add("result-image");
-    resultBox.appendChild(image);
-
-    const title = document.createElement("h2");
-    title.textContent = newsItem.title;
-    title.classList.add("result-title");
-    resultBox.appendChild(title);
-
-    const price = document.createElement("div");
-    price.textContent = newsItem.body;
-    price.classList.add("result-price");
-    resultBox.appendChild(price);
-
-    const readMoreLink = document.createElement("a");
-    readMoreLink.href = newsItem.news_url;
-    readMoreLink.target = "_blank";
-    readMoreLink.textContent = "Read More >>>";
-    readMoreLink.classList.add("button-destinasi");
-    resultBox.appendChild(readMoreLink);
-
-    cardSearch.appendChild(resultBox);
-    newsContainer.appendChild(cardSearch);
+    newsContainer.appendChild(card);
   });
 }
 
 window.onload = function () {
-  renderNews();
+  updateDestinasiPackages();
+  updateNews();
 };
