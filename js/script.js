@@ -222,8 +222,8 @@ async function ambilDataFormkontak() {
   // Data yang akan dikirim ke server
   const dataformkontak = {
     username: username,
-    useremail: useremail,
-    user_messange: user_messange,
+    emai : useremail,
+    user_messange:user_messange
   };
 
   try {
@@ -243,7 +243,6 @@ async function ambilDataFormkontak() {
     console.error("Terjadi kesalahan:", error.message);
   }
 }
-
 
 window.onload = function () {
   updateDestinasiPackages();
