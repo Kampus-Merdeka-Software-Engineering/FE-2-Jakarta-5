@@ -160,7 +160,7 @@ async function updateDestinasiPackages() {
       <img src="${destinasi.image_url}" />
       <h2>${destinasi.destination_name}</h2>
       ${generateStarRating(destinasi.destination_package_review)}
-      <div class="price">RP.${destinasi.package_price}</div>
+      <div class="price">Rp.${destinasi.package_price.toLocaleString("id-ID")}</div>
       <a href="${Link[index].link_url}" target="_blank" class="button-destinasi">Book Now</a>
     `;
 
@@ -222,8 +222,8 @@ async function ambilDataFormkontak() {
   // Data yang akan dikirim ke server
   const dataformkontak = {
     username: username,
-    emai : useremail,
-    user_messange:user_messange
+    emai: useremail,
+    user_messange: user_messange,
   };
 
   try {
@@ -233,6 +233,45 @@ async function ambilDataFormkontak() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(dataformkontak),
+    });
+    if (response.ok) {
+      console.log("Data berhasil dikirim ke server");
+    } else {
+      console.error("Gagal mengirim data ke server");
+    }
+  } catch (error) {
+    console.error("Terjadi kesalahan:", error.message);
+  }
+}
+
+async function createOrder(package_id) {
+  const nik = document.getElementById("nik").value;
+  const nama = document.getElementById("nama").value;
+  const alamat = document.getElementById("alamat").value;
+  const tanggal = document.getElementById("tanggal").value;
+  const quantityInput = document.getElementById("quantityInput").value;
+  const elementotalHarga = document.getElementsByClassName("totalHarga");
+  const totalHarga = elementotalHarga[0].innerHTML;
+  const formattedTotalHarga = totalHarga.replace(/\./g, "");
+  // const integerValue = parseInt(formattedTotalHarga);
+
+  const data = {
+    destination_package_id: package_id,
+    nik: nik,
+    username: nama,
+    useraddress: alamat,
+    order_date: tanggal,
+    total_person: quantityInput,
+    total_price: formattedTotalHarga,
+  };
+
+  try {
+    const response = await fetch("https://be-2-jakarta-5-production.up.railway.app/order/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     });
     if (response.ok) {
       console.log("Data berhasil dikirim ke server");
