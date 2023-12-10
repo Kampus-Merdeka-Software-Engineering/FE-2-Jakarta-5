@@ -213,6 +213,38 @@ async function updateNews() {
   });
 }
 
+async function ambilDataFormkontak() {
+  // Mengambil nilai dari elemen formulir kontak
+  const username = document.getElementById("name").value;
+  const useremail = document.getElementById("email").value;
+  const user_messange = document.getElementById("message").value;
+
+  // Data yang akan dikirim ke server
+  const dataformkontak = {
+    username: username,
+    useremail: useremail,
+    user_messange: user_messange,
+  };
+
+  try {
+    const response = await fetch("https://be-2-jakarta-5-production.up.railway.app/FAQ/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dataformkontak),
+    });
+    if (response.ok) {
+      console.log("Data berhasil dikirim ke server");
+    } else {
+      console.error("Gagal mengirim data ke server");
+    }
+  } catch (error) {
+    console.error("Terjadi kesalahan:", error.message);
+  }
+}
+
+
 window.onload = function () {
   updateDestinasiPackages();
   updateNews();
