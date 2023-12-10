@@ -93,7 +93,7 @@
     <!-- Form Pemesanan-->
 
     <div class="pemesanan">
-        <form>
+        <form action="" onsubmit="createOrder(3)">
             <h1>Form Pemesanan</h1>
             <label for="nik">NIK (Nomor Induk Kependudukan):</label>
             <input type="text" id="nik" name="nik" placeholder="Masukkan NIK Anda" required>
@@ -104,7 +104,7 @@
             <label for="nama">Alamat:</label>
             <input type="text" id="alamat" name="alamat" placeholder="Masukkan Alamat  Anda" required>
 
-            <label for="tanggal">Tanggal Pemesanan:</label>
+            <label for="tanggal">Tanggal Pemesanan: </label>
             <input type="date" id="tanggal" name="tanggal" required>
 
             <label for="jumlahOrang">Jumlah Orang:</label>

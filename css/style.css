@@ -281,25 +281,11 @@ h1 {
 
 .card {
   width: 80%;
-  margin: 30px;
+  margin: 30px auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   display: flex; /* Menggunakan flexbox untuk tata letak */
 }
 
-.card-1 {
-  width: 80%;
-  margin: 30px;
-  margin-left: auto;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: flex; /* Menggunakan flexbox untuk tata letak */
-}
-
-.card-2 {
-  width: 80%;
-  margin: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: flex; /* Menggunakan flexbox untuk tata letak */
-}
 
 .card img {
   width: 200px; /* Lebar gambar diatur */
