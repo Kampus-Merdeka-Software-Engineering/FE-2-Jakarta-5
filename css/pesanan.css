@@ -9,4 +9,15 @@
 
 h1{
   text-align: center;
+  margin-bottom: 80px;
 }
+
+/* Membuat tabel berada di tengah */
+table {
+  margin: auto;
+}
+
+th , td{
+  text-align: center;
+}
+
